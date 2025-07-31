@@ -8,6 +8,8 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pytest (>=8.4.1,<9.0.0)",
+    "pytest-cov (>=6.2.1,<7.0.0)"
 ]
 
 
@@ -17,4 +19,8 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.lint.dependencies]
 isort = "^6.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
 
