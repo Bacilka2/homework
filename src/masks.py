@@ -16,5 +16,8 @@ def get_mask_card_number(card_num: str) -> str:
 def get_mask_account(account_num: str) -> str:
     """Маска номера счета"""
     mask = "**"
-    result = mask + account_num[-4:0]
+    result = mask + account_num[-4:]
     return result
+
+
+print(get_mask_account('64686473678894779589'))
