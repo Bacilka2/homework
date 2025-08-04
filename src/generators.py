@@ -34,7 +34,8 @@ def filter_by_currency(transactions: list[dict], currency: str):
         t_cur = transaction["operationAmount"]["currency"]["name"]
         if t_cur == currency:
            result.append(transaction)
-    return iter(result)
+
+    yield result
 
 
 # print(*filter_by_currency(trs, "RUB"))
@@ -46,7 +47,7 @@ def transaction_descriptions(transactions: list[dict]):
     for transaction in transactions:
         desc = transaction["description"]
         result.append(desc)
-    return iter(result)
+    yield result
 #print(*transaction_descriptions(trs))
 
 

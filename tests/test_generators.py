@@ -10,7 +10,7 @@ import pytest
 from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
 def test_filter_by_currency(generators_transactions, generators_transactions_usd):
-    assert list(filter_by_currency(generators_transactions, "USD")) == list(generators_transactions_usd)
+    assert filter_by_currency(generators_transactions, "USD") == list(generators_transactions_usd)
 
 
 def test_transaction_description():
