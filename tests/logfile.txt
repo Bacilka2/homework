@@ -1,0 +1,2 @@
+2025-08-05 12:28:55,229 - INFO - Starting execution of test_error with args: () and kwargs: {}
+2025-08-05 12:28:55,229 - ERROR - Error in test_error: ValueError - Что-то пошло не так. Args: (), Kwargs: {}
