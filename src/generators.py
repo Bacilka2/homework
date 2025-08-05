@@ -60,3 +60,5 @@ def card_number_generator(start: int, end: int) -> str:
 
 for card_number in card_number_generator(3, 40):
     print(card_number)
+
+
