@@ -28,14 +28,12 @@ trs = [ {
               "from": "Счет 19708645243227258542",
               "to": "Счет 75651667383060284188"
        }]
-def filter_by_currency(transactions: list[dict], currency: str):
-    result = []
-    for transaction in transactions:
-        t_cur = transaction["operationAmount"]["currency"]["name"]
-        if t_cur == currency:
-           result.append(transaction)
 
-    yield result
+def filter_by_currency(transactions: list[dict], currency: str):
+        for transaction in transactions:
+            t_cur = transaction["operationAmount"]["currency"]["name"]
+            if t_cur == currency:
+                yield transaction
 
 
 # print(*filter_by_currency(trs, "RUB"))
@@ -46,8 +44,7 @@ def transaction_descriptions(transactions: list[dict]):
     result = []
     for transaction in transactions:
         desc = transaction["description"]
-        result.append(desc)
-    yield result
+        yield desc
 #print(*transaction_descriptions(trs))
 
 
