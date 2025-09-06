@@ -2,6 +2,11 @@ from locale import currency
 
 import requests
 
+import os
+from dotenv import load_dotenv, dotenv_values
+load_dotenv()
+
+
 def convert(transaction):
     currency = transaction["operationAmount"]["currency"]["code"]
     amount = transaction["operationAmount"]["amount"]
@@ -12,7 +17,7 @@ def convert(transaction):
 
         payload = {}
         headers = {
-            "apikey": "isBeHxj22ekZHl6HgBH32ahxHO2HY5HX"
+              os.getenv('MY_KEY'),
         }
 
         response = requests.request("GET", url, headers=headers, data=payload)

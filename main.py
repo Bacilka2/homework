@@ -1,6 +1,11 @@
 from src.masks import get_mask_account, get_mask_card_number
 from src.utils import path_json
 from config import ROOT_DIR
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 card_num = input("Введите номер карты: ")
 print(get_mask_card_number(card_num))

@@ -10,7 +10,7 @@ def path_json(path):
         with open(path,encoding= "utf-8") as file:
             data = json.load(file)
             return data
-    except FileNotFoundError:
+    except json.JSONDecodeError:
         return []
 
 
