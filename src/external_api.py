@@ -18,7 +18,7 @@ def convert(transaction):
 
         payload = {}
         headers = {
-              os.getenv('MY_KEY'),
+             "apikey": os.getenv('MY_KEY'),
         }
 
         response = requests.request("GET", url, headers=headers, data=payload)
