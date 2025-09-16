@@ -10,5 +10,5 @@ def read_transactions_excel(filepath: str, sheet_name: str = 0) -> pd.DataFrame:
     """
     Считывает финансовые операции из Excel
     """
-    x = pd.read_excel(filepath, sheet_name=sheet_name)
-    return x
+    c = pd.read_excel(filepath, sheet_name=sheet_name)
+    return c
