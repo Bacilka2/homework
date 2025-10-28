@@ -28,15 +28,15 @@ def convert(transaction):
         return result["result"]
 
 
-data = convert( {
+data = convert({
     "id": 41428829,
     "state": "EXECUTED",
     "date": "2019-07-03T18:35:29.512364",
     "operationAmount": {
-      "amount": "8221.37",
-      "currency": {
-        "name": "USD",
-        "code": "USD"
+    "amount": "8221.37",
+    "currency": {
+    "name": "USD",
+    "code": "USD"
       }
     },
     "description": "Перевод организации",

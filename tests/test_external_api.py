@@ -29,8 +29,6 @@ class TestConvert(unittest.TestCase):
         }
 
         result = convert(tx)
-
-
         mock_request.assert_called_once()
         called_args, called_kwargs = mock_request.call_args
         assert('https://api.apilayer.com/exchangerates_data/convert', called_args[0])

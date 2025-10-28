@@ -2,6 +2,7 @@ from src.csv_reader import read_transactions_csv, read_transactions_excel
 from src.masks import get_mask_account, get_mask_card_number
 from src.utils import path_json
 from config import ROOT_DIR
+
 import os
 from dotenv import load_dotenv
 
@@ -15,6 +16,7 @@ account_num = input("Введите номер счета: ")
 print(get_mask_account(account_num))
 
 data = path_json(f"{ROOT_DIR}\\data\\operations.json")
+
 
 def main():
     """Основная точка входа программы.
@@ -65,6 +67,7 @@ def main():
             print("Функция обработки XLSX-файла не реализована в этом проекте.")
     else:
         print("Пользователь: Неправильный ввод. Пожалуйста, запустите программу снова и выберите 1, 2 или 3.")
+
 
 if __name__ == "__main__":
     main()

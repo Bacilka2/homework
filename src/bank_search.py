@@ -1,6 +1,7 @@
 import re
 from typing import List, Dict
 
+
 def process_bank_search(data: List[Dict], search: str) -> List[Dict]:
     """ Функция возвращает список словарей из data, у которых в поле
     'description' содержится совпадение с регулярным выражением, сформированным

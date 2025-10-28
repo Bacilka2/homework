@@ -1,7 +1,7 @@
 import logging
 
 
-def get_mask_card_number(card_num: str) -> str:
+def get_mask_card_number(card_num: str, name=None) -> str:
     """Маска номера карты"""
     logger = logging.getLogger(name)
     logger.info("Запуск маскирования номера карты: %s", card_num)
@@ -18,7 +18,8 @@ def get_mask_card_number(card_num: str) -> str:
         logger.debug("Сформированная маска: %s", result.strip())
     return result.strip()
 
-def get_mask_account(account_num: str) -> str:
+
+def get_mask_account(account_num: str, name=None) -> str:
     """Маска номера счета"""
     logger = logging.getLogger(name)
     logger.info("Запуск маскирования номера счета: %s", account_num)

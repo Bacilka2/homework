@@ -1,4 +1,4 @@
-trs = [ {
+trs = [{
           "id": 939719570,
           "state": "EXECUTED",
           "date": "2018-06-30T02:08:58.425572",
@@ -29,11 +29,12 @@ trs = [ {
               "to": "Счет 75651667383060284188"
        }]
 
+
 def filter_by_currency(transactions: list[dict], currency: str):
-        for transaction in transactions:
-            t_cur = transaction["operationAmount"]["currency"]["name"]
-            if t_cur == currency:
-                yield transaction
+    for transaction in transactions:
+        t_cur = transaction["operationAmount"]["currency"]["name"]
+        if t_cur == currency:
+            yield transaction
 
 
 # print(*filter_by_currency(trs, "RUB"))
@@ -45,8 +46,7 @@ def transaction_descriptions(transactions: list[dict]):
     for transaction in transactions:
         desc = transaction["description"]
         yield desc
-#print(*transaction_descriptions(trs))
-
+# print(*transaction_descriptions(trs))
 
 
 def card_number_generator(start: int, end: int) -> str:
@@ -57,5 +57,4 @@ def card_number_generator(start: int, end: int) -> str:
 
 for card_number in card_number_generator(3, 40):
     print(card_number)
-
 

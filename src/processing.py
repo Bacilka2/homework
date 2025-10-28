@@ -20,8 +20,6 @@ state соответствует указанному значению."""
             continue
         return filtered_list
 
-
-
 print(filter_by_state(list_of_dict))
 
 
@@ -43,4 +41,3 @@ def sort_by_date(operations: List[Dict[str, str]], reverse: bool = True) -> List
 
 
 print(sort_by_date(operations_sort_by_date))
-

@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch, mock_open
 
 
-from src.utils  import path_json
+from src.utils import path_json
 
 
 class TestPathJson(unittest.TestCase):

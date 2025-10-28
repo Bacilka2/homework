@@ -1,5 +1,5 @@
 import logging
-
+import time
 from functools import wraps
 
 
@@ -43,13 +43,7 @@ def log(filename=None):
     return decorator
 
 
-
-
-
-import time
-
-
-def log(filename = None):
+def log(filename=None):
     def my_decorator(func):
         def wrapper(*args, **kwargs):
             try:
@@ -59,7 +53,7 @@ def log(filename = None):
                 name_func = func.__name__
                 if filename:
                     with open(filename, 'a', encoding="utf-8") as file:
-                        file.write(f"Начало: {time_1} \nФункция {name_func} ок. Результат: {result}\nКонец: {time_2}\n\n")
+                        file.write(f"Начало: {time_1} \nФункция{name_func}ок. Результат:{result}\nКонец: {time_2}\n\n")
                         file.close()
                     return f"Начало: {time_1} \nФункция {name_func} ок. Результат: {result}\nКонец: {time_2}\n\n"
                 else:
@@ -76,15 +70,16 @@ def log(filename = None):
         return wrapper
     return my_decorator
 
-#@log(filename="mylog.txt")
+
+# @log(filename="mylog.txt")
 @log()
 def my_function(x, y):
     return x + y
 
 
-
 @log()
-def second_fun(x,y):
-    print(x/y)
+def second_fun(x, y):
+    print(x / y)
+
 
 second_fun(5, 1)
