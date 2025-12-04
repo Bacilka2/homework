@@ -8,13 +8,15 @@ def process_bank_operations(data: List[Dict], categories: List[str]) -> Dict[str
     for c in categories:
         pattern_map[c] = re.compile(re.escape(str(c)), re.IGNORECASE)
 
+
     counts = {cat: 0 for cat in categories}
+
 
     for item in data:
         desc = str(item.get("description", ""))
-        for c, pat in pattern_map.items():
+        for cat, pat in pattern_map.items():
             if pat.search(desc):
-                counts[c] += 1
+                counts[cat] += 1
 
                 break
 

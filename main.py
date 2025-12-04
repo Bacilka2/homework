@@ -9,11 +9,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-card_num = input("Введите номер карты: ")
-print(get_mask_card_number(card_num))
+#card_num = input("Введите номер карты: ")
+#print(get_mask_card_number(card_num))
 
-account_num = input("Введите номер счета: ")
-print(get_mask_account(account_num))
+#ccount_num = input("Введите номер счета: ")
+#print(get_mask_account(account_num))
 
 data = path_json(f"{ROOT_DIR}\\data\\operations.json")
 
@@ -49,7 +49,7 @@ def main():
             print("Функция обработки JSON-файла не реализована в этом проекте.")
     elif user_input == "2":
         print("Программа: Для обработки выбран CSV-файл.")
-        if 'read_transactoins_csv' in globals():
+        if 'read_transactions_csv' in globals():
             try:
                 read_transactions_csv()
             except TypeError:
