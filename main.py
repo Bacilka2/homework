@@ -134,7 +134,7 @@ def main():
     for t in filtered:
         print(t)  # или форматированный вывод
 
-    print(f'Всего банковских операций в выборке: {len(filtered)}')
+    print(f'Всего банковских операций  в выборке: {len(filtered)}')
 
 
 if __name__ == "__main__":
