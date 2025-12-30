@@ -88,6 +88,8 @@ def generators_transactions():
             "to": "Счет 14211924144426031657"
         }
     ]
+
+
 @pytest.fixture
 def generators_transactions_usd():
     return [
