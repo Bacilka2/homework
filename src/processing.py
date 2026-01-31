@@ -18,9 +18,7 @@ state соответствует указанному значению."""
             filtered_list.append(dict)
         else:
             continue
-        return filtered_list
-
-print(filter_by_state(list_of_dict))
+    return filtered_list
 
 
 operations_sort_by_date: List[Dict[str, str]] = [
@@ -39,5 +37,3 @@ def sort_by_date(operations: List[Dict[str, str]], reverse: bool = True) -> List
 
     return sorted_operations
 
-
-print(sort_by_date(operations_sort_by_date))
