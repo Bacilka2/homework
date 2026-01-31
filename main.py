@@ -52,7 +52,7 @@ def main():
         print("Программа: Для обработки выбран CSV-файл.")
         if 'read_transactions_csv' in globals():
             data =  read_transactions_csv('data/transactions.csv')
-            print("DEBUG_1", data)
+            #print("DEBUG_1", data)
         else:
             print("Функция обработки CSV-файла не реализована в этом проекте.")
     elif user_input == "3":
@@ -80,7 +80,7 @@ def main():
         print("Доступные для фильтрации статусы: EXECUTED, CANCELED, PENDING")
         return
     data = filter_by_state(data, normalized)
-    print("DEBUG_2", data)
+    #print("DEBUG_2", data)
     # Здесь вы можете вызвать логику фильтрации по статусу в загруженных данных
     # Например: filtered = filter_transactions_by_status(data_json, normalized)
     # Но для демонстрации выведем ожидаемое сообщение:
@@ -96,7 +96,7 @@ def main():
             reverse = True
 
         data = sorted(data, key=lambda t: t.get("date"), reverse=reverse)
-        print("DEBUG_3", data)
+       # print("DEBUG_3", data)
         # здесь корректно обрабатывайте форматы даты
 
     # вывод по требованию рублевых транзакций1
@@ -104,14 +104,14 @@ def main():
                           'левые транзакции? Да/Нет\n').strip().lower()
     if currency_only in {'да', 'д', 'yes', 'y'}:
        data = list(filter_by_currency(data,"RUB"))
-       print("DEBUG_5", data)
+      # print("DEBUG_5", data)
 
     # фильтр по слову в описании
     word_filter = input('Отфильтровать список транзакций по определенному слову в описании? Да/Нет\n').strip().lower()
     if word_filter in {'да', 'д', 'yes', 'y'}:
         word = input('Введите слово для фильтрации: ').strip().lower()
         data = [x for x in data if word in x.get("description").lower()]
-        print("DEBUG_4", data)
+       # print("DEBUG_4", data)
     # 4) печать итогов
     print('Распечатываю итоговый список транзакций...')
     for t in data:
