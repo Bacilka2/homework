@@ -6,7 +6,7 @@ def read_transactions_csv(filepath: str) -> List[Dict]:
     """
     Считывает финансовые операции из CSV-файла и возвращает список словарей.
     """
-    df = pd.read_csv(filepath)
+    df = pd.read_csv(filepath,sep = ';')
     return df.to_dict(orient='records')
 
 

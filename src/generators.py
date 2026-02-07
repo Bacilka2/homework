@@ -32,7 +32,7 @@ trs = [{
 
 def filter_by_currency(transactions: list[dict], currency: str):
     for transaction in transactions:
-        t_cur = transaction["operationAmount"]["currency"]["code"]
+        t_cur = transaction["currency_code"]
         if t_cur == currency:
             yield transaction
 
