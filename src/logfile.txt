@@ -1,0 +1,9 @@
+Запуск функции 'test_error' с аргументами args=(), kwargs={}
+Ошибка в функции 'test_error': ValueError. Входные параметры args=(), kwargs={}. Ошибка: Что-то пошло не так
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\pythonProject5\src\generators.py", line 83, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\user\PycharmProjects\pythonProject5\src\generators.py", line 123, in test_error
+    raise ValueError("Что-то пошло не так")
+ValueError: Что-то пошло не так
+

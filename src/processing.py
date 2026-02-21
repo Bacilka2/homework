@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import List, Dict
+import re
 
 list_of_dict = [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
                 {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
@@ -17,11 +18,7 @@ state соответствует указанному значению."""
             filtered_list.append(dict)
         else:
             continue
-        return filtered_list
-
-
-
-print(filter_by_state(list_of_dict))
+    return filtered_list
 
 
 operations_sort_by_date: List[Dict[str, str]] = [
@@ -40,5 +37,3 @@ def sort_by_date(operations: List[Dict[str, str]], reverse: bool = True) -> List
 
     return sorted_operations
 
-
-print(sort_by_date(operations_sort_by_date))
