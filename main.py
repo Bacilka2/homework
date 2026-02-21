@@ -1,3 +1,6 @@
+from mypy.state import state
+
+from src import widget, generators
 from src.csv_reader import read_transactions_csv, read_transactions_excel
 from src.generators import filter_by_currency
 from src.processing import filter_by_state
@@ -21,7 +24,7 @@ def normalize_user_status(user_input: str) -> str:
 
 
 
-def main():
+def main(menu_item=None):
     """Основная точка входа программы.
     Приветствует пользователя, выводит меню и вызывает обработчики
     в зависимости от выбора."""
@@ -118,7 +121,27 @@ def main():
         print(t)  # или форматированный вывод
 
     print(f'Всего банковских операций  в выборке: {len(data)}')
+    print(f"Всего банковских операций в выборке: {len(data)}\n")
+    descriptions = generators.transaction_descriptions(data)
 
+    for transaction in data:
+        date_transactions = widget.get_date(transaction["date"])
+        description = transaction["description"]
+        check_from = widget.mask_account_card(str(transaction.get("from", "")))
+        check_to = widget.mask_account_card(str(transaction.get("to", "")))
 
+        if not check_from:
+            check_transactions = check_to
+        else:
+            check_transactions = f"{check_from} -> {check_to}"
+
+        if menu_item == "1":
+            sum_transactions = transaction["operationAmount"]["amount"]
+            currency = transaction["operationAmount"]["currency"]["name"]
+        else:
+            sum_transactions = transaction["amount"]
+            currency = transaction["currency_name"]
+
+        print(f"{date_transactions} {description}\n{check_transactions}\nСумма: {sum_transactions} {currency}\n")
 if __name__ == "__main__":
     main()
